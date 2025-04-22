@@ -23,6 +23,8 @@
             min-height: 100vh;
             text-align: center;
             padding: 1rem;
+            position: relative;
+            z-index: 10; /* Rasm va matnning orqa fonidan yuqorida bo'lishi uchun */
         }
 
         h1 {
@@ -48,6 +50,7 @@
             display: flex;
             justify-content: center;
             position: relative;
+            z-index: 5; /* Rasmning boshqa elementlarga nisbatan yuqori bo'lishi */
         }
 
         .image-wrapper img {
@@ -58,7 +61,6 @@
             box-shadow: 0 15px 40px rgba(255, 215, 0, 0.8), 0 0 30px rgba(255, 105, 180, 0.6);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
 
         /* Firework animation */
         .firework {
@@ -88,7 +90,7 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
-            z-index: -1;
+            z-index: -1; /* Yulduzlar fonning pastki qismida bo'lsin */
             background: transparent;
         }
 
@@ -108,7 +110,7 @@
             width: 100vw;
             height: 100vh;
             pointer-events: none;
-            z-index: 1000;
+            z-index: -1; /* Salyut fonning pastki qismida bo'lsin */
         }
 
         @keyframes twinkle {
@@ -243,7 +245,6 @@
 
         animate();
     </script>
-
 
     <script>
         // Har xil joyda yulduzlar yaratish
